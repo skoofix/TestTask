@@ -6,6 +6,10 @@ namespace Code.Services.Input
     {
         Vector2 Axis { get; }
 
-        bool IsJumpButtonUp();
+        bool IsJumpButtonDown();
+        bool HasAxisInput();
+        bool GetRightMouseButton();
+        float GetVerticalMouseAxis();
+        float GetHorizontalMouseAxis();
     }
 }

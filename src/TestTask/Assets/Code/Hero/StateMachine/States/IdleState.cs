@@ -1,54 +1,20 @@
-﻿namespace Code.Hero.StateMachine.States
+﻿using Code.Services.Input;
+using UnityEngine;
+
+namespace Code.Hero.StateMachine.States
 {
-    public class IdleState : IState
+    public class IdleState : BaseMovementState
     {
-        public void Enter()
-        {
-            
-        }
+        public IdleState(IStateSwitcher stateSwitcher, IInputService inputService, float movementSpeed, Rigidbody rigidbody) : base(stateSwitcher, inputService, movementSpeed, rigidbody) {}
 
-        public void Exit()
-        {
-        }
+        public override void Enter() {}
 
-        public void Update()
-        {
-        }
-    }
-    
-    public class MoveState : IState
-    {
-        public void Enter()
-        {
-            throw new System.NotImplementedException();
-        }
+        public override void Exit() {}
 
-        public void Exit()
+        public override void Update()
         {
-            throw new System.NotImplementedException();
-        }
-
-        public void Update()
-        {
-            throw new System.NotImplementedException();
-        }
-    }
-
-    public class JumpState : IState
-    {
-        public void Enter()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void Exit()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void Update()
-        {
-            throw new System.NotImplementedException();
+            CheckForMove();
+            CheckForJump();
         }
     }
 }

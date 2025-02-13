@@ -6,9 +6,7 @@ namespace Code.Infrastructure
     {
         public static IInputService InputService;
 
-        public Game()
-        {
+        public Game() => 
             InputService = new InputService();
-        }
     }
 }
