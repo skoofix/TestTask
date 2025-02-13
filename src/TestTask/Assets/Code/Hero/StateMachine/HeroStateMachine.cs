@@ -11,13 +11,13 @@ namespace Code.Hero.StateMachine
         private readonly List<IState> _states;
         private IState _currentState;
 
-        public HeroStateMachine(IInputService inputService, float movementSpeed, HeroAnimator animator, Rigidbody rigidbody)
+        public HeroStateMachine(IInputService inputService, float movementSpeed,float jumpForce, HeroAnimator animator, Rigidbody rigidbody)
         {
             _states = new List<IState>()
             {
                 new IdleState(this, inputService, movementSpeed, rigidbody),
                 new MoveState(this, inputService, movementSpeed, rigidbody),
-                new JumpState(this, inputService, movementSpeed, animator, rigidbody)
+                new JumpState(this, inputService, movementSpeed, jumpForce, animator, rigidbody)
             };
 
             _currentState = _states[0];

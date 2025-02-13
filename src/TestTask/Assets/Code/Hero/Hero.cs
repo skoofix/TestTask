@@ -8,6 +8,7 @@ namespace Code.Hero
     public class Hero : MonoBehaviour
     {
         [SerializeField] private float _movementSpeed;
+        [SerializeField] private float _jumpForce = 2;
         [SerializeField] private Rigidbody _rigidbody;
         [SerializeField] private HeroAnimator  _animator;
         
@@ -17,7 +18,7 @@ namespace Code.Hero
         private void Awake()
         {
             _inputService = Game.InputService;
-            _stateMachine = new HeroStateMachine(_inputService, _movementSpeed, _animator, _rigidbody);
+            _stateMachine = new HeroStateMachine(_inputService, _movementSpeed, _jumpForce, _animator, _rigidbody);
         }
 
         private void Update() => 
