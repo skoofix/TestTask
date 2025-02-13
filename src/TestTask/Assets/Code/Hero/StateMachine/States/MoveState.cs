@@ -22,7 +22,7 @@ namespace Code.Hero.StateMachine.States
         {
             var movementVector = CalculateMovementVector();
 
-            Rigidbody.velocity = new Vector3(movementVector.x * MovementSpeed * Time.deltaTime, Rigidbody.velocity.y, movementVector.z * MovementSpeed * Time.deltaTime);
+            Rigidbody.velocity = new Vector3(movementVector.x * MovementSpeed, Rigidbody.velocity.y, movementVector.z * MovementSpeed);
         }
 
         private Vector3 CalculateMovementVector()
