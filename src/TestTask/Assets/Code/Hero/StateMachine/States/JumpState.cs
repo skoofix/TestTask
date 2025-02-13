@@ -36,10 +36,8 @@ namespace Code.Hero.StateMachine.States
             }
         }
 
-        private bool IsGround()
-        {
-            return Mathf.Abs(Rigidbody.velocity.y) < 0.01f;
-        }
+        private bool IsGround() => 
+            Mathf.Abs(Rigidbody.velocity.y) < 0.01f;
 
         private float CalculateJumpVelocity() => 
             Mathf.Sqrt(1 * -2f * Physics.gravity.y);
