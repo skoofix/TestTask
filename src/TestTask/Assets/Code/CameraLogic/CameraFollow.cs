@@ -33,6 +33,9 @@ namespace Code.CameraLogic
             LookAtTarget();
         }
 
+        public void Follow(GameObject following) =>
+            _following = following.transform;
+        
         private void HandleCameraRotation()
         {
             float horizontalInput = _inputService.GetHorizontalMouseAxis();

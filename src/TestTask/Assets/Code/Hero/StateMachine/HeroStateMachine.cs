@@ -1,19 +1,20 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Code.Hero.StateMachine.States;
+using Code.Infrastructure;
 using Code.Services.Input;
 using UnityEngine;
 
 namespace Code.Hero.StateMachine
 {
-    public class HeroStateMachine : IStateSwitcher
+    public class HeroStateMachine
     {
-        private readonly List<IState> _states;
-        private IState _currentState;
+        private readonly List<IUpdatableState> _states;
+        private IUpdatableState _currentState;
 
         public HeroStateMachine(IInputService inputService, float movementSpeed,float jumpForce, HeroAnimator animator, Rigidbody rigidbody)
         {
-            _states = new List<IState>()
+            _states = new List<IUpdatableState>()
             {
                 new IdleState(this, inputService, movementSpeed, rigidbody),
                 new MoveState(this, inputService, movementSpeed, rigidbody),
@@ -24,15 +25,16 @@ namespace Code.Hero.StateMachine
             _currentState.Enter();
         }
 
-        public void SwitchState<T>() where T : IState
+        public void SwitchState<T>() where T : IUpdatableState
         {
-            IState state = _states.FirstOrDefault(state => state is T);
+            IUpdatableState state = _states.FirstOrDefault(state => state is T);
             
             _currentState.Exit();
             _currentState = state;
             _currentState.Enter();
         }
 
-        public void Update() => _currentState.Update();
+        public void Update() => 
+            _currentState.Update();
     }
 }

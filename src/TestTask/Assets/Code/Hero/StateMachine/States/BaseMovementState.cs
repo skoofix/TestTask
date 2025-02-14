@@ -1,17 +1,18 @@
-﻿using Code.Services.Input;
+﻿using Code.Infrastructure;
+using Code.Services.Input;
 using UnityEngine;
 
 namespace Code.Hero.StateMachine.States
 {
-    public abstract class BaseMovementState : IState
+    public abstract class BaseMovementState : IUpdatableState
     {
-        protected readonly IStateSwitcher StateSwitcher;
+        protected readonly HeroStateMachine StateSwitcher;
         protected readonly IInputService InputService;
         protected readonly Rigidbody Rigidbody;
         protected readonly float MovementSpeed;
         protected readonly Camera Camera;
 
-        protected BaseMovementState(IStateSwitcher stateSwitcher, IInputService inputService, float movementSpeed, Rigidbody rigidbody)
+        protected BaseMovementState(HeroStateMachine stateSwitcher, IInputService inputService, float movementSpeed, Rigidbody rigidbody)
         {
             StateSwitcher = stateSwitcher;
             InputService = inputService;

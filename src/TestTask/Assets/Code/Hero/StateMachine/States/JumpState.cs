@@ -9,13 +9,15 @@ namespace Code.Hero.StateMachine.States
         private readonly HeroAnimator _animator;
         private bool _jumpAvailable = true;
         
-        public JumpState(IStateSwitcher stateSwitcher, IInputService inputService, float movementSpeed, float jumpForce, HeroAnimator animator, Rigidbody rigidbody) : base(stateSwitcher, inputService, movementSpeed, rigidbody)
+        public JumpState(HeroStateMachine stateSwitcher, IInputService inputService, float movementSpeed, float jumpForce, HeroAnimator animator, Rigidbody rigidbody) : base(stateSwitcher, inputService, movementSpeed, rigidbody)
         {
             _jumpForce = jumpForce;
             _animator = animator;
         }
 
-        public override void Enter() {}
+        public override void Enter()
+        {
+        }
 
         public override void Exit()
         {
@@ -32,9 +34,9 @@ namespace Code.Hero.StateMachine.States
         {
             if (_jumpAvailable)
             {
+                _animator.PlayJump();
                 Rigidbody.velocity = new Vector3(Rigidbody.velocity.x, CalculateJumpVelocity(), Rigidbody.velocity.z);
                 _jumpAvailable = false;
-                _animator.PlayJump();
             }
         }
 

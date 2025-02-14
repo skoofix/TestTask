@@ -5,7 +5,7 @@ namespace Code.Hero.StateMachine.States
 {
     public class IdleState : BaseMovementState
     {
-        public IdleState(IStateSwitcher stateSwitcher, IInputService inputService, float movementSpeed, Rigidbody rigidbody) : base(stateSwitcher, inputService, movementSpeed, rigidbody) {}
+        public IdleState(HeroStateMachine stateSwitcher, IInputService inputService, float movementSpeed, Rigidbody rigidbody) : base(stateSwitcher, inputService, movementSpeed, rigidbody) {}
 
         public override void Enter() {}
 
