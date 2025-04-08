@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c86fece86d5a4fe882c53bc2db4b53c7, type: 3}
+  m_Name: ItemData
+  m_EditorClassIdentifier: 
+  Items:
+  - ID: 0
+    Type: 0
+    Icon: {fileID: -1532658693, guid: a056509896f034b42b72564b0cd94295, type: 3}
+    StackLimit: 750
+    Name: "\u0417\u043E\u043B\u043E\u0442\u043E"
+  - ID: 1
+    Type: 0
+    Icon: {fileID: -1730294656, guid: a056509896f034b42b72564b0cd94295, type: 3}
+    StackLimit: 10
+    Name: "\u0414\u0440\u0435\u0432\u0435\u0441\u0438\u043D\u0430"
+  - ID: 2
+    Type: 0
+    Icon: {fileID: 1893616633, guid: a056509896f034b42b72564b0cd94295, type: 3}
+    StackLimit: 5
+    Name: "\u0420\u0443\u0434\u0430"
+  - ID: 50
+    Type: 1
+    Icon: {fileID: 731428251, guid: a056509896f034b42b72564b0cd94295, type: 3}
+    StackLimit: 3
+    Name: "\u0411\u043E\u0431\u0435\u0440"
+  - ID: 51
+    Type: 1
+    Icon: {fileID: -915010725, guid: a056509896f034b42b72564b0cd94295, type: 3}
+    StackLimit: 3
+    Name: "\u041B\u044F\u0433\u0443\u0448\u043A\u0430"
+  - ID: 52
+    Type: 1
+    Icon: {fileID: 1253371024, guid: a056509896f034b42b72564b0cd94295, type: 3}
+    StackLimit: 3
+    Name: "\u041A\u043E\u0442\u0438\u043A"
+  - ID: 100
+    Type: 2
+    Icon: {fileID: -1592522983, guid: a056509896f034b42b72564b0cd94295, type: 3}
+    StackLimit: 2
+    Name: "\u0417\u0435\u043B\u044C\u0435"
+  - ID: 101
+    Type: 2
+    Icon: {fileID: 1114451941, guid: a056509896f034b42b72564b0cd94295, type: 3}
+    StackLimit: 1
+    Name: "\u0411\u043E\u043C\u0431\u0430"
